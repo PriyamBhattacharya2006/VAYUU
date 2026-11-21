@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans: "Figtree", "Avenir Next", "Segoe UI", sans-serif;
+
+  --color-paper: #eceae6;
+  --color-sheet: #f6f5f2;
+  --color-ink: #1c1e20;
+  --color-muted: #3f484c;
+  --color-faint: #5a6368;
+  --color-line: #ddd9d2;
+  --color-accent: #1e2a30;
+  --color-accent-fg: #f4f2ee;
+  --color-good: #145c38;
+  --color-good-bg: #e4f0e9;
+  --color-warn: #6a4312;
+  --color-warn-bg: #f4ecdf;
+  --color-bad: #7c2d28;
+  --color-bad-bg: #f6e7e4;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-panel: 32px;
+
+  --text-display: clamp(3.25rem, 2rem + 6vw, 5.25rem);
+}
+
+:root {
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-panel: 0 16px 40px rgb(28 30 32 / 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-paper);
+  }
+
+  body {
+    min-height: 100%;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-ink) 14%, var(--color-paper));
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .shadow-panel {
+    box-shadow: var(--shadow-panel);
+  }
+
+  .press {
+  transition-property: background-color, color, border-color, transform;
+  transition-duration: var(--motion-quick);
+  transition-timing-function: var(--ease-smooth-out);
+}
+
+.press:active {
+  transform: scale(0.98);
+}
+
+.knob {
+  transition-property: transform;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-smooth-out);
+}
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise var(--motion-slow) var(--ease-smooth-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+
+  .press,
+  .press:active {
+    transition: none;
+    transform: none;
+  }
+
+  .knob {
+    transition: none;
+  }
+}

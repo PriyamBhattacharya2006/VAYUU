@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Hearthline",
+      "hasCanvas": false,
+      "bodyTextLen": 5606,
+      "bodyTextHash": "e1a59c78b68c996b675c83157b318cfd13c8295e48eb8684fce00ee68e1dddce",
+      "bodyTextPrefix": "Hearthline Winter air guide For families, schools, and blocks in",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Hearthline",
+      "hasCanvas": false,
+      "bodyTextLen": 5606,
+      "bodyTextHash": "e1a59c78b68c996b675c83157b318cfd13c8295e48eb8684fce00ee68e1dddce",
+      "bodyTextPrefix": "Hearthline Winter air guide For families, schools, and blocks in",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
